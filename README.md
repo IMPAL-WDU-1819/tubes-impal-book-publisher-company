@@ -2,7 +2,7 @@
 
 Book Publisher Company App
 
-##Pendahuluan
+## Pendahuluan
 
 Book Publisher Company App merupakan sebuah website yang digunakan oleh perusahan penerbit buku yang memiliki fungsionalitas sebagai berikut:
 
