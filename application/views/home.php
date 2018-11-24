@@ -63,12 +63,33 @@
 
             <?php } ?>
 
-             <?php if (!empty($book)) { foreach ($book as $data) { ?>
+            <?php if (!empty($book)) { foreach ($book as $data) { ?>
             
             <div class="card mb-4 mx-2" style="width: 10rem;">
-                <img class="card-img-top" src="<?php $data->url ?>" alt="<?php $data->title ?>">
+                <img class="card-img-top" src="<?php  ?>" alt="<?php $data->nama_buku ?>">
                 <div class="card-body text-center">
-                    <button class="btn btn-sm btn-info px-3" data-toggle="modal" data-target="#details">Details</button>
+                    <button class="btn btn-sm btn-info px-3" data-toggle="modal" data-target="#details<?php echo $data->id_buku; ?>">Details</button>
+                </div>
+            </div>
+
+            <!-- modal detail buku -->
+            <div class="modal fade-scale" id="details<?php echo $data->id_buku; ?>" tabindex="-1" role="dialog">
+                <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                    <div class="modal-content p-5">
+                        
+                        <div class="row">
+                            <div class="col-5">
+                                <img class="detail-img" src="<?php echo base_url('assets/images/book1.jpg'); ?>" alt="">
+                                <button class="btn btn-primary w-100 mt-3">Buy now</button>
+                            </div>
+                            <div class="col-7">
+                                <h3><?php echo $data->nama_buku; ?></h3>
+                                <p>Penulis : Gading Martusion</p>
+                                <p><?php echo $data->tanggal_terbit; ?></p>
+                            </div>
+                        </div>
+                    
+                    </div>
                 </div>
             </div>
 
@@ -84,10 +105,8 @@
         <h2 class="text-center my-4">Category</h2>
 
         <div class="row justify-content-center">
-
-            <?php for($i=0; $i<6; $i++){ ?>
             
-            <a href="" class="nav-link text-dark col-5 card p-5 mb-4 <?php if ($i % 2 == 0) { echo 'mr-4'; } ?>">
+            <a href="" class="nav-link text-dark col-5 card p-5 mb-4 mr-4">
 
                 <div class="row">
                     <div class="col-md-4 col-12 text-center">
@@ -100,7 +119,44 @@
                 
             </a>
 
-            <?php } ?>
+            <a href="" class="nav-link text-dark col-5 card p-5 mb-4 ">
+
+                <div class="row">
+                    <div class="col-md-4 col-12 text-center">
+                        <i class="fas fa-paw fa-5x text-primary"></i>
+                    </div>
+                    <div class="col-md-8 col-12 align-items-center d-flex justify-content-md-start justify-content-center">
+                        <p class="lead mt-md-0 mt-3 mb-0">Animal</p>
+                    </div>
+                </div>
+
+            </a>
+
+            <a href="" class="nav-link text-dark col-5 card p-5 mb-4 mr-4">
+
+                <div class="row">
+                    <div class="col-md-4 col-12 text-center">
+                        <i class="fas fa-graduation-cap fa-5x text-primary"></i>
+                    </div>
+                    <div class="col-md-8 col-12 align-items-center d-flex justify-content-md-start justify-content-center">
+                        <p class="lead mt-md-0 mt-3 mb-0">Knowledge</p>
+                    </div>
+                </div>
+
+            </a>
+
+            <a href="" class="nav-link text-dark col-5 card p-5 mb-4 ">
+
+                <div class="row">
+                    <div class="col-md-4 col-12 text-center">
+                        <i class="fas fa-graduation-cap fa-5x text-primary"></i>
+                    </div>
+                    <div class="col-md-8 col-12 align-items-center d-flex justify-content-md-start justify-content-center">
+                        <p class="lead mt-md-0 mt-3 mb-0">Education</p>
+                    </div>
+                </div>
+
+            </a>
 
         </div>
     </div>

@@ -8,8 +8,8 @@ class Penerbit extends CI_Controller{
     }
 
     function index(){
-        //$data['book'] = $this->book_m->getAll_book();
-        $this->load->view('home');
+        $data['book'] = $this->book_m->getAll_book();
+        $this->load->view('home',$data);
     }
 
     function register(){
