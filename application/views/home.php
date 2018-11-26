@@ -52,21 +52,10 @@
 
         <div class="row justify-content-center">
 
-            <?php for($i=0; $i<6; $i++){ ?>
-
-            <div class="card mb-4 mx-2" style="width: 10rem;">
-                <img class="card-img-top" src="<?php echo base_url('assets/images/book1.jpg'); ?>" alt="">
-                <div class="card-body text-center">
-                    <button class="btn btn-sm btn-info px-3" data-toggle="modal" data-target="#details">Details</button>
-                </div>
-            </div>
-
-            <?php } ?>
-
-            <?php if (!empty($book)) { foreach ($book as $data) { ?>
+            <?php if (!empty($book)) { $i = 0; foreach ($book as $data) { ?>
             
             <div class="card mb-4 mx-2" style="width: 10rem;">
-                <img class="card-img-top" src="<?php  ?>" alt="<?php $data->nama_buku ?>">
+                <img class="card-img-top" src="<?php echo base_url('images/'.$data->images); ?>" alt="<?php $data->nama_buku; ?>">
                 <div class="card-body text-center">
                     <button class="btn btn-sm btn-info px-3" data-toggle="modal" data-target="#details<?php echo $data->id_buku; ?>">Details</button>
                 </div>
@@ -79,7 +68,7 @@
                         
                         <div class="row">
                             <div class="col-5">
-                                <img class="detail-img" src="<?php echo base_url('assets/images/book1.jpg'); ?>" alt="">
+                                <img class="detail-img" src="<?php echo base_url('images/'.$data->images); ?>" alt="">
                                 <button class="btn btn-primary w-100 mt-3">Buy now</button>
                             </div>
                             <div class="col-7">
@@ -93,7 +82,7 @@
                 </div>
             </div>
 
-            <?php }} ?>
+            <?php $i = $i+1; if ($i == 6) {break;}  }} ?>
 
         </div>
 
