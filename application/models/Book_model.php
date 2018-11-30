@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');
 
-class Book_m extends CI_Model {
+class Book_model extends CI_Model {
 
     function insert_book($data){
         if ($this->db->insert('buku',$data)) {
@@ -10,16 +10,11 @@ class Book_m extends CI_Model {
         }
     }
 
-    function getAll_book(){
+    function get_book(){
         return $this->db->get('buku')->result();
     }
 
-    function getCategory_book($category){
-        $this->db->where($category);
-        return $this->db->get('buku')->result();
-    }
-
-    function edit_book($data){
+    function update_book($data){
         $this->db->where('id',$data['id']);
         if ($this->db->update('buku')) {
             return true;

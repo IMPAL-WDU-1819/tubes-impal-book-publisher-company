@@ -11,6 +11,7 @@
             <input type="search" name="search" id="search" class="form-control w-100" placeholder="search here . . .">
         </form>
         <div class="collapse navbar-collapse">
+            <?php if (!isset($this->session->userdata()))
             <ul class="navbar-nav ml-md-auto ml-0">
                 <li class="nav-item">
                     <a href="" class="nav-link">Sign Up</a>

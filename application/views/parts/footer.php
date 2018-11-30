@@ -54,7 +54,7 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content p-5">
                 <h2 class="text-center mb-5">Sign In</h2>
-                <form class="form mb-5" action="">
+                <form class="form mb-5" action="penerbit/login" method="POST">
                     <input type="text" name="username" id="uname" class="form-control mb-3" placeholder="username">
                     <input type="password" name="password" id="pwd" class="form-control mb-4" placeholder="password">
                     <div class="row mb-4">
