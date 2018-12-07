@@ -11,7 +11,17 @@
             <input type="search" name="search" id="search" class="form-control w-100" placeholder="search here . . .">
         </form>
         <div class="collapse navbar-collapse">
-            <?php if (!isset($this->session->userdata()))
+
+            <?php if ($this->session->userdata('user')): $user = $this->session->userdata('user'); ?>
+            <ul class="navbar-nav ml-md-auto ml-0">
+                <li class="nav-item">
+                    <a href="#" class="nav-link"><?php echo ucfirst($user->username); ?></a>
+                </li>
+                <li class="nav-item">
+                    <a href="penerbit/logout" class="nav-link">Logout</a>
+                </li>
+            </ul>
+            <?php else: ?>
             <ul class="navbar-nav ml-md-auto ml-0">
                 <li class="nav-item">
                     <a href="" class="nav-link">Sign Up</a>
@@ -20,6 +30,8 @@
                     <a href="#" role="button" class="nav-link" data-toggle="modal" data-target="#login">Login</a>
                 </li>
             </ul>
+            <?php endif; ?>
+
         </div>
     </nav>
     

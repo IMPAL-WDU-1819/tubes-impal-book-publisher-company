@@ -10,10 +10,10 @@ class Account_model extends CI_Model {
         }
     }
 
-    function get_account($data){
+    function get_account_customer($data){
         $this->db->where('username',$data['username']);
         $this->db->where('password',$data['password']);
-        return $this->db->get('admin')->result();
+        return $this->db->get('customer')->result();
     }
 
     function update_account($data){

@@ -47,8 +47,6 @@
         </div>
     </div>
 
-    <?php echo $
-
     <!-- book menu -->
     <div class="container">
 

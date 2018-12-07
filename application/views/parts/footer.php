@@ -54,9 +54,15 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content p-5">
                 <h2 class="text-center mb-5">Sign In</h2>
-                <form class="form mb-5" action="penerbit/login" method="POST">
-                    <input type="text" name="username" id="uname" class="form-control mb-3" placeholder="username">
-                    <input type="password" name="password" id="pwd" class="form-control mb-4" placeholder="password">
+                <form id="formLoginCustomer" class="form mb-5" action="penerbit/login" method="POST">
+                    <div class="form-group">
+                        <input type="text" name="username" id="uname" class="form-control" placeholder="username">
+                        <p id="usernameLoginHelper" class="form-text text-danger">Please input your username.</p>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" name="password" id="pwd" class="form-control" placeholder="password">
+                        <p id="passwordLoginHelper" class="form-text text-danger">Please input your password.</p>
+                    </div>
                     <div class="row mb-4">
                         <div class="col">
                             <div class="custom-control custom-checkbox text-left align-items-center d-flex">
@@ -69,10 +75,26 @@
                         </div>
                     </div>
                     <button type="submit" class="btn btn-info w-100">Sign In</button>
+                    <p id="loginHelper" class="mt-2 text-center text-danger">Maaf username atau password salah.</p>
                 </form>
             </div>
         </div>
     </div>
+
+    <!-- Modal berhasil login --> 
+    <div class="modal fade" id="loginValid" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content px-2 text-center">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <p class="mt-5"><i class="fas fa-check-circle fa-5x text-success"></i><br/><br/>Anda berhasil login.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <!-- load JS-->
     <script src="<?php echo base_url(); ?>assets/js/jquery-3.3.1.min.js"></script>
@@ -91,5 +113,25 @@
                 afterModal(this)
             }, 3000);
         })
+        
+        //hide helper first
+        $('#usernameLoginHelper').hide();
+        $('#passwordLoginHelper').hide();
+        $('#loginHelper').hide();
 
     </script>
+
+    <?php 
+        //tampilkan helper jika ada field yang kosong
+        if ($this->session->flashdata('login_customer') == 'allNull'){
+            echo "<script>$('#usernameLoginHelper').show();$('#passwordLoginHelper').show();$('#login').modal('show');</script>";
+        } else if ($this->session->flashdata('login_customer') == 'usernameNull'){
+            echo "<script>$('#usernameLoginHelper').show();$('#login').modal('show');</script>";
+        } else if ($this->session->flashdata('login_customer') == 'passwordNull'){
+            echo "<script>$('#passwordLoginHelper').show();$('#login').modal('show');</script>";
+        } else if ($this->session->flashdata('login') == 'invalid'){
+            echo "<script>$('#loginHelper').show();$('#login').modal('show');</script>";
+        } else if ($this->session->flashdata('login') == 'valid'){
+            echo "<script>$('#loginValid').modal('show');</script>";
+        }
+    ?>

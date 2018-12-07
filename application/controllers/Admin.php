@@ -4,7 +4,7 @@ class Admin extends CI_Controller{
 
     function __construct(){
         parent::__construct();
-        $this->load->model('admin_m');
+        $this->load->model('account_model');
     }
 
     function index(){
@@ -12,7 +12,7 @@ class Admin extends CI_Controller{
         //jika sudah maka langsung menuju admin panel
         if ($this->session->userdata('status')) {
             $this->load->view('admin/panel');
-        } 
+        }
         
         //jika belum maka akan menuju halaman login
         else {
