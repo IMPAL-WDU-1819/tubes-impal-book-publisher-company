@@ -1,3 +1,32 @@
 #loginValid {
     font-size: 20px;
 }
+
+.profile-img {
+    width: 20px;
+}
+
+.item-cart img{
+    width: 80%;
+}
+
+.item-cart-head{
+    
+}
+
+.item-cart input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.item-cart .item-count, .item-price {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.item-price {
+    font-size: 20px;
+}

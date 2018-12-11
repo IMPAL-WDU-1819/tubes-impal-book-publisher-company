@@ -95,6 +95,89 @@
         </div>
     </div>
 
+    <!-- modal belanja -->
+    <div class="modal fade" id="modalBelanja" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content px-2 text-center">
+
+                <div class="modal-header">
+                    <h5 class="modal-title">Your Cart</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <!-- isi utama -->
+                <div class="modal-body">
+
+                    <!-- item cart head -->
+                    <div class="row item-cart-head">
+                        <div class="col-3 text-center">
+                            <h6>BOOK</h6>
+                        </div>
+                        <div class="col-3 text-center">
+                            <h6>TOTAL</h6>
+                        </div>
+                        <div class="col text-center">
+                            <h6>PRICE</h6>
+                        </div>
+                    </div>
+
+                    <!-- item cart utama-->
+                    <div class="item-cart row mb-3">
+
+                        <div class="col-3">
+                            <img src="<?php echo base_url('images/art.png'); ?>" alt="">
+                        </div>
+
+                        <div class="col-3 item-count">
+                            <input type="text" class="form-control" name="item-count" id="">
+                        </div>
+
+                        <div class="col item-price">
+                            <span>$200</span>
+                        </div>
+
+                    </div>
+                    <div class="item-cart row">
+
+                        <div class="col-3">
+                            <img src="<?php echo base_url('images/art.png'); ?>" alt="">
+                        </div>
+
+                        <div class="col-3 item-count">
+                            <input type="text" class="form-control" name="item-count" id="">
+                        </div>
+
+                        <div class="col item-price">
+                            <span>$200</span>
+                        </div>
+
+                    </div>
+
+                    <!-- price view -->
+                    <hr>
+                    <div class="item-cart row mt-2">
+
+                        <div class="col-6 item-price">
+                            TOTAL PRICE
+                        </div>
+
+                        <div class="col-6 item-price">
+                            <span>$400</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- load JS-->
     <script src="<?php echo base_url(); ?>assets/js/jquery-3.3.1.min.js"></script>
@@ -118,6 +201,11 @@
         $('#usernameLoginHelper').hide();
         $('#passwordLoginHelper').hide();
         $('#loginHelper').hide();
+
+        //button cart clicked
+        $('#btnCart').click(function(){
+            $('#modalBelanja').modal('show');
+        })
 
     </script>
 

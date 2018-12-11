@@ -15,7 +15,13 @@
             <?php if ($this->session->userdata('user')): $user = $this->session->userdata('user'); ?>
             <ul class="navbar-nav ml-md-auto ml-0">
                 <li class="nav-item">
-                    <a href="#" class="nav-link"><?php echo ucfirst($user->username); ?></a>
+                    <a href="#" class="nav-link">
+                        <img src="<?php echo base_url('assets/images/user.png'); ?>" alt="" class="profile-img">
+                        <?php echo ucfirst($user->username); ?>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" id="btnCart">0<i class="fas fa-shopping-cart"></i></a>
                 </li>
                 <li class="nav-item">
                     <a href="penerbit/logout" class="nav-link">Logout</a>
