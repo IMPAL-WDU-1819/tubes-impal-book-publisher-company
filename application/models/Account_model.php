@@ -3,7 +3,7 @@
 class Account_model extends CI_Model {
 
     function insert_account($data){
-        if ($this->db->insert('account',$data)) {
+        if ($this->db->insert('customer',$data)) {
             return true;
         } else {
             return false;

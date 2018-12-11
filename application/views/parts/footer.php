@@ -81,6 +81,31 @@
         </div>
     </div>
 
+    <!-- modal signup -->
+    <div class="modal fade-scale" id="modalSignup" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content p-5">
+                <h2 class="text-center mb-5">Sign Up</h2>
+                <form id="formSignupCutomer" class="form mb-5" action="penerbit/signup" method="POST">
+                    <div class="form-group">
+                        <input type="text" name="sName" id="sname" class="form-control" placeholder="name">
+                        <p id="nameSignupHelper" class="form-text text-danger">Please input your name.</p>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="sUsername" id="suname" class="form-control" placeholder="username">
+                        <p id="usernameSignupHelper" class="form-text text-danger">Please input your username.</p>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" name="sPassword" id="spassword" class="form-control" placeholder="password">
+                        <p id="passwordSignupHelper" class="form-text text-danger">Please input your password.</p>
+                    </div>
+                    <button type="submit" class="btn btn-info w-100">Sign Up</button>
+                    <p id="signupHelper" class="mt-2 text-center text-danger">Maaf username sudah terdaftar.</p>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <!-- Modal berhasil login --> 
     <div class="modal fade" id="loginValid" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -201,11 +226,17 @@
         $('#usernameLoginHelper').hide();
         $('#passwordLoginHelper').hide();
         $('#loginHelper').hide();
+        $('#nameSignupHelper').hide();
+        $('#usernameSignupHelper').hide();
+        $('#passwordSignupHelper').hide();
+        $('#signupHelper').hide();
 
         //button cart clicked
         $('#btnCart').click(function(){
             $('#modalBelanja').modal('show');
-        })
+        });
+
+        $('#modalSignup').modal('show');
 
     </script>
 
